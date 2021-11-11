@@ -34,7 +34,6 @@ export const MapContainer = (props) => {
 
     service.getDetails(request, (place, status) => {
       if(status === google.maps.places.PlacesServiceStatus.OK){
-        /* console.log('restaurants >>>', results); */
         dispatch(setRestaurant(place));
       }
     });

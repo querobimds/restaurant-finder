@@ -67,7 +67,7 @@ const Home = () => {
                 {restaurants.map((restaurant) => (
                   <Card 
                     key={restaurant.place_id}
-                    photo={restaurant.photos ? restaurant.photos[0].getUrl : defaultPhoto}
+                    photo={restaurant.photos ? restaurant.photos[0].getUrl() : defaultPhoto}
                     title={restaurant.name}
                   />
                 ))}
