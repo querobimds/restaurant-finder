@@ -7,8 +7,8 @@ import {Container,
   Search,
   Logo,
   Wrapper,
-  CarouselTitle,
-  Carousel} from './styles';
+  CarouselTitle, Carousel,
+  ModalTitle, ModalContent} from './styles';
 import { Card, RestaurantCard, Modal, Map} from '../../components';
 import logo from '../../assets/logo.svg';
 import defaultPhoto from '../../assets/restaurante-fake.png';
@@ -77,9 +77,10 @@ const Home = () => {
     </Container>
     <Map query={query} placeId={placeId} />
     <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}>
-      <p>{restaurantSelected?.name}</p>
-      <p>{restaurantSelected?.formatted_phone_number}</p>
-      <p>{restaurantSelected?.formatted_address}</p>
+      <ModalTitle>{restaurantSelected?.name}</ModalTitle>
+      <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
+      <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
+      <ModalContent>{restaurantSelected?.opening_hours?.open_now ? "Aberto agora" : "Fechado"}</ModalContent>
     </Modal>
   </Wrapper>
   
